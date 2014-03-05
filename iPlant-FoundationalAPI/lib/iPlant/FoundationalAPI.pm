@@ -24,7 +24,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw( new invoke application_id set_credentials debug );
 
-our $VERSION = '0.32';
+our $VERSION = '0.33';
 use vars qw($VERSION);
 
 use LWP;
@@ -293,7 +293,7 @@ sub _build_opt_spec {
     }
 
     # Determine the type specifier to pass to the option parser.
-    my $type_specifier = $TYPE_SPECIFIER_FOR{$type} || '';
+    my $type_specifier = $TYPE_SPECIFIER_FOR{$type} || '!';
 
     # Build the components of the result.
     my $spec = "$id$type_specifier";
